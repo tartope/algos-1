@@ -8,6 +8,17 @@
 
 
 def two_sum(numbers, target_sum):
+    # create empty dict
+    map = {}
+    # loop through list
+    for idx, num in enumerate(numbers):
+        compNum = target_sum - num
+        print(compNum)
+        # create variable with complement number (target - num)
+        # store complement number in dict with number value
+        # if number
+
+        
     pass #TODO:
 
 

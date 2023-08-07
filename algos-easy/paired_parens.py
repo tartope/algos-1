@@ -6,7 +6,26 @@
 
 
 def paired_parens(string):
-  pass # todo
+  # create empty stack to store first parentheses
+  stack = []
+
+  # loop through string
+  for char in string:
+    # if char is open parentheses 
+    if char == "(":
+      # save it in a stack
+      stack.append(char)
+    # else if char is closed parentheses
+    elif char == ")":
+      if len(stack) == 0:
+        return False
+      else:
+        # pop open parentheses off stack and compare
+        stack.pop(-1)
+  if len(stack) == 0:
+    return True
+  else:
+    return False
 
 
 
@@ -14,9 +33,13 @@ def paired_parens(string):
 
 
 # TEST CASES
-paired_parens("(david)((abby))") # -> True
-# paired_parens("()rose(jeff") # -> False
-# paired_parens(")(") # -> False
-# paired_parens("()") # -> True
-# paired_parens("(((potato())))") # -> True
-# paired_parens("(())(water)()") # -> True
+print(paired_parens("(david)((abby))")) # -> True
+print(paired_parens("()rose(jeff")) # -> False
+print(paired_parens(")(")) # -> False
+print(paired_parens("()")) # -> True
+print(paired_parens("(((potato())))")) # -> True
+print(paired_parens("(())(water)()")) # -> True
+
+
+# input a string with parentheses
+# output true (has opening and closing parentheses), or false (does not have matching pair)
