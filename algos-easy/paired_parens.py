@@ -21,7 +21,7 @@ def paired_parens(string):
         return False
       else:
         # pop open parentheses off stack and compare
-        stack.pop(-1)
+        stack.pop()
   if len(stack) == 0:
     return True
   else:
@@ -33,12 +33,16 @@ def paired_parens(string):
 
 
 # TEST CASES
-print(paired_parens("(david)((abby))")) # -> True
-print(paired_parens("()rose(jeff")) # -> False
-print(paired_parens(")(")) # -> False
-print(paired_parens("()")) # -> True
-print(paired_parens("(((potato())))")) # -> True
-print(paired_parens("(())(water)()")) # -> True
+# print(paired_parens("(david)((abby))")) # -> True
+# print(paired_parens("()rose(jeff")) # -> False
+# print(paired_parens(")(")) # -> False
+# print(paired_parens("()")) # -> True
+# print(paired_parens("(((potato())))")) # -> True
+# print(paired_parens("(())(water)()")) # -> True
+
+print(paired_parens("(((water(")) # -> False
+print(paired_parens("())water(")) # -> False
+print(paired_parens("))water))")) # -> False
 
 
 # input a string with parentheses
